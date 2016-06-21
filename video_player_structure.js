@@ -3,6 +3,9 @@ var html_5_video_player_eb = (function (html_5_video_player_eb) {
 
 	var CreateVideoContainer = function(videoContainerElement){
 
+		// wrap div around all direct dependant video tags
+		// make all direct dependant div tags have id and class to represent single - video - container
+
 	};
 
 
