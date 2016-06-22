@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    </head>
+    <body>
+        <script src="video_player_structure.js"></script>
+
+
+        <div id="videoPlayer1">
+        	<video width="320" height="240" controls>
+			  <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
+			  <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
+			  <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
+			Your browser does not support the video tag.
+			</video>
+        </div>
+
+
+
+
+        <script>
+			var toolbar = html_5_video_player_eb.createVideoContainer("videoPlayer1");
+        </script>
+
+    </body>
+</html>

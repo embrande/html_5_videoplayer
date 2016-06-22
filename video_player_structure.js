@@ -1,11 +1,37 @@
 var html_5_video_player_eb = (function (html_5_video_player_eb) {
 
 
-	var CreateVideoContainer = function(videoContainerElement){
+	var CreateVideoControls = function(singleVideo){
+		//hide controls
+		//get or create video controls: play, pause, playbar, timestamp, videoclick, fullscreen.
+	};
+	Object.defineProperties(CreateVideoControls.prototype, {
+   		//register control events
+   			//make sure it counters with the other objects. Ex. if play is press all videos in said object are paused.
+	});
 
-		// wrap div around all direct dependant video tags
-		// make all direct dependant div tags have id and class to represent single - video - container
 
+	var RegisterControl = function(videoControl){
+		
+	};
+	Object.defineProperties(RegisterControl.prototype, {
+   		
+	});
+
+
+	var CreateSingleVideo = function(videoContainerElement){
+		//	get all video tag dependancies (direct children)
+		//  var selectionCount = document.querySelectorAll("#window > section").length;
+
+		//	get all direct children divs and add class and id
+	};
+	Object.defineProperties(CreateSingleVideo.prototype, {
+   	});
+
+
+	var AddVideo = function(videoContainer){
+		// take array passed and place it into responsible video tag and div tag.
+		// create video controls
 	};
 
 
@@ -13,9 +39,16 @@ var html_5_video_player_eb = (function (html_5_video_player_eb) {
 
 		//creates video contianer based off of ID
         var element = document.getElementById(elementID);
+        
+        if (!element) {
+            element = document.createElement("DIV");
+            element.id = elementID;
+            element.className = elementID;
+            document.body.appendChild(element);
+        }
 
         // Create new facotry function of video container
-        return new CreateVideoContainer(element);
+        return new CreateSingleVideo(element);
 	};
 
 
@@ -28,3 +61,6 @@ var html_5_video_player_eb = (function (html_5_video_player_eb) {
 
 // below is what I want the user to be able to do to create the video player
 // -> var videoPlayer = html_5_video_player_eb.createVideoPlayer("containerID");
+
+//	Need to add code to support below.
+// -> videoPlayer.AddVideo(["src1","src2","src3"]);
