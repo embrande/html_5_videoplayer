@@ -24,8 +24,23 @@ var html_5_video_player_eb = (function (html_5_video_player_eb) {
 		//  var selectionCount = document.querySelectorAll("#window > section").length;
 		//	get all direct children divs and add class and id
 		//	add to array and loop through array
+
+		//	get all videos inside of video tags
+		var video = document.querySelectorAll("#" + videoContainerElement.id + " > video");
 	};
-	Object.defineProperties(CreateSingleVideo.prototype, {
+	var CreateVideoItem = function(singleVideo){
+
+		Object.defineProperties(this, {
+			__videoContainer: {
+				value: singleVideo
+			},
+			videos: {
+				value: CreateSingleVideo(videos),
+				enumerable: true
+			}
+		});
+	};
+	Object.defineProperties(CreateVideoItem.prototype, {
 		//	add each video to the object and pass it to CreateVideoControls
         __wrapVideoTagInDiv: {
         	get: function(){
@@ -38,6 +53,13 @@ var html_5_video_player_eb = (function (html_5_video_player_eb) {
 	        },
 	        set: function(value){
 	        }
+        },
+        createVideoControls: {
+        	get: function(){
+	        },
+	        set: function(value){
+	        },
+	        enumerable: true
         }
    	});
 
