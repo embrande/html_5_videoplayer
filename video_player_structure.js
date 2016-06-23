@@ -22,17 +22,34 @@ var html_5_video_player_eb = (function (html_5_video_player_eb) {
 	var CreateSingleVideo = function(videoContainerElement){
 		//	get all video tag dependancies (direct children)
 		//  var selectionCount = document.querySelectorAll("#window > section").length;
-
 		//	get all direct children divs and add class and id
+		//	add to array and loop through array
 	};
 	Object.defineProperties(CreateSingleVideo.prototype, {
+		//	add each video to the object and pass it to CreateVideoControls
+        __wrapVideoTagInDiv: {
+        	get: function(){
+	        },
+	        set: function(value){
+	        }
+        },
+        __addClassID: {
+        	get: function(){
+	        },
+	        set: function(value){
+	        }
+        }
    	});
 
 
-	var AddVideo = function(videoContainer){
+	var AddVideo = function(videoCodecArray){
+
+        CreateSingleVideo.call(this);
 		// take array passed and place it into responsible video tag and div tag.
-		// create video controls
 	};
+	AddVideo.prototype = Object.create(CreateSingleVideo.prototype, {
+		// inherit singleVideo prototype to add video
+   	});
 
 
 	html_5_video_player_eb.createVideoContainer = function(elementID){
