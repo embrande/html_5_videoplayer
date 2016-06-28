@@ -18,49 +18,48 @@ var html_5_video_player_eb = (function (html_5_video_player_eb) {
    		
 	});
 
+	var CreateSingleVideo = function(video){
 
-	var CreateSingleVideo = function(videoContainerElement){
-		//	get all video tag dependancies (direct children)
-		//  var selectionCount = document.querySelectorAll("#window > section").length;
-		//	get all direct children divs and add class and id
-		//	add to array and loop through array
-
-		//	get all videos inside of video tags
-		var video = document.querySelectorAll("#" + videoContainerElement.id + " > video");
 	};
-	var CreateVideoItem = function(singleVideo){
+	Object.defineProperties(CreateSingleVideo.prototype, {
+
+	});
+
+	var LoopVideos = function(videoContainerElement){
+		var i, videoTag, singleVideo;
+
+		videoTag = Array.prototype.slice.call(
+					document.querySelectorAll(
+						"#" + videoContainer.id + " > video"
+					)
+				);
+		for(i=0;i<videoTag.length;i++){
+			videoTag.htmlCode = "<div>" + videoTag[i].outerHTML + "</div>";
+			// singleVideo.innerHTML = videoContainerElement.htmlCode;
+		}
+
+		videoDiv = Array.prototype.slice.call(
+					document.querySelectorAll(
+						"#" + videoContainer.id + " > div"
+					)
+				);
+
+// singleVideoContainer
+	};
+	var CreateVideoItem = function(videoContainer){
 
 		Object.defineProperties(this, {
 			__videoContainer: {
-				value: singleVideo
+				value: videoContainer
 			},
 			videos: {
-				value: CreateSingleVideo(videos),
+				value: LoopVideos(videoContainer),
 				enumerable: true
 			}
 		});
 	};
 	Object.defineProperties(CreateVideoItem.prototype, {
 		//	add each video to the object and pass it to CreateVideoControls
-        __wrapVideoTagInDiv: {
-        	get: function(){
-	        },
-	        set: function(value){
-	        }
-        },
-        __addClassID: {
-        	get: function(){
-	        },
-	        set: function(value){
-	        }
-        },
-        createVideoControls: {
-        	get: function(){
-	        },
-	        set: function(value){
-	        },
-	        enumerable: true
-        }
    	});
 
 
@@ -87,7 +86,7 @@ var html_5_video_player_eb = (function (html_5_video_player_eb) {
         }
 
         // Create new facotry function of video container
-        return new CreateSingleVideo(element);
+        return new CreateVideoItem(element);
 	};
 
 
